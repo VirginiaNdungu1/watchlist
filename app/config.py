@@ -12,7 +12,7 @@ class ProdConfig(Config):
     Contains configurations in the Production Stages
     Inherits from the Parent Config class
     '''
-    pass:
+    pass
 
 
 class DevConfig(Config):
