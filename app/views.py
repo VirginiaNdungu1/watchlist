@@ -9,8 +9,8 @@ def index():
     '''
     View Root Page Function that returns the index page and it's data
     '''
-    message = "Hello Flask... I'mma about to master you watch out!!!"
-    return render_template("index.html", message=message)
+    title = 'Home - Welcome to The best Movie Review Website Online'
+    return render_template("index.html", title=title)
 
 
 @app.route("/movie/<int:movie_id>")
