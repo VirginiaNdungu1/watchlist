@@ -3,7 +3,7 @@ class Config:
     General Configuration Parent class
     Contains configurations used in both Production nad Devvelopment Stages
     '''
-    pass
+    MOVIE_API_BASE_URL = "https: // api.themoviedb.org / 3 / movie / {}?api_key = {}"
 
 
 class ProdConfig(Config):
