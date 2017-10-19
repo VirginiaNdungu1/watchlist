@@ -1,16 +1,39 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+<!-- styles block -->
+{% block styles%}
+  {{super()}}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+  {% endblock%}
 
-  <head>
-    <meta charset="utf-8"> {% if title %}
-    <title> {{ title }}</title>
-    {% else %}
-    <title> Welcome to the best Movie Review website </title>
-    {% endif %}
-  </head>
+  <!-- content block  -->
+  {% block content %}
+    <div class="container">
+      <form>
+        <input type="text" name="movie_query" placeholder="search for movie" class="form-control">
+        <input type="submit" name="Submit" class="btn btn-danger">
+      </form>
 
-  <body>
-
-  </body>
-
-</html>
+    </div>
+    <!-- Popular Movie Section -->
+    <h3 class="popularMovies">Popular Movies</h3>
+    <ul>
+      <!-- {% for popular_movie in popular %}
+        <li>{{popular_movie.title}}</li>
+      {% endfor %} -->
+      {{macro.displayMovieList(popular)}}
+    </ul>
+    <!-- Upcoming Movies Section -->
+    <h3 class="popularMovies">Upcoming Movies</h3>
+    <!-- <ul>
+      {% for upcoming_movies in upcoming %}
+        <li>{{upcoming_movies.title}}</li>
+      {% endfor %} -->
+    {{macro.displayMovieList(upcoming)}}
+</ul>
+<!--Now Showing Movies Section  -->
+<h3 class="popularMovies">Showing in cinemas Now</h3>
+<ul>
+  {{macro.displayMovieList(now_showing)}}
+</ul>
+{% endblock %}

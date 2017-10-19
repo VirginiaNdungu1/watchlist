@@ -1,8 +1,14 @@
 import unittest
-# import the movie module
-from models import movie
+# import the Movie class
+from app.models import Movie
 # get the movie class
-Movie = movie.Movie
+# Movie = movie.Movie
+'''
+Define a variable - Movie
+assign it to movie.Movie
+movie represents module file -- movie.py
+Movie represents the class -- Movie
+'''
 # create a test class
 
 
@@ -28,5 +34,5 @@ class MovieTest(unittest.TestCase):
         self.assertTrue(isinstance(self.new_movie, Movie))
 
 
-if __name__ == "__main__":
-    unittest.main()
+# if __name__ == "__main__":
+#     unittest.main()
